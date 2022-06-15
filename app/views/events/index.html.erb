@@ -1,0 +1,10 @@
+<h1>Events#index</h1>
+<ul>
+  <% @events.each do |event| %>
+    <%# <% unless article.archived? %> 
+      <li>
+        <%= link_to event.name, event %>
+      </li>
+    <%# <% end %> 
+  <% end %>
+</ul>

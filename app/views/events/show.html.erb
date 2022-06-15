@@ -1,0 +1,23 @@
+<div class="container event-details">
+    <div class="row">
+        <div class="col events-header">
+			<h2>Events name: <%= @event.name%></h2>
+		</div>
+    </div>
+    <div class="row">
+        <div class="col col-md-3">
+        Location: <%= @event.location %>
+        <%if @event.creator %>
+            <div class="col col-md-3">
+                Created by: <%= link_to @event.creator.name, @event.creator%>
+            </div>
+        <%end%>
+        <div class="col col-md-3">
+        Date and Time: <%= @event.date %>
+        </div>
+        <div class="col col-md-3">
+        Description: <%= @event.description %>
+        </div>
+    </div>
+
+</div>
