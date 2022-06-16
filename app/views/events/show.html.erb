@@ -18,6 +18,17 @@
         <div class="col col-md-3">
         Description: <%= @event.description %>
         </div>
-    </div>
 
+        <div class="col col-md-3 check_box input-field">
+            <%= form_with(model: @event, url: event_path(@event), method: "patch") do |f| %>
+                <%= f.check_box :attendees %> 
+                <%= f.label "Tick if you will be attending the event." %>
+                <div class="button">
+                    <%= f.submit "Submit", class: "btn btn-primary btn-lg" %>
+                </div>
+            <% end %>
+        </div>
+
+    </div>
+    
 </div>
