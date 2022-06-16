@@ -1,10 +1,11 @@
-<h1>Events#index</h1>
-<ul>
-  <% @events.each do |event| %>
-    <%# <% unless article.archived? %> 
-      <li>
-        <%= link_to event.name, event %>
-      </li>
-    <%# <% end %> 
-  <% end %>
-</ul>
+<div class = "container">
+    <h1>Welcome to Private Event!</h1>
+    <ul>
+        <% @events.each do |event| %>
+            <div class="row" id="event-row">
+                <p class="event-title"><%= link_to event.name, event %></p> 
+            </div>
+        <% end %>
+        <div class="button"><%= link_to 'Create New Event', new_event_path%></div>
+    </ul>
+</div>

@@ -7,11 +7,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "events#index"
 
-  get 'signup' => 'users#new', as: 'signup'
-  get 'login' => 'sessions#new', as: 'login'
-  get 'logout' => 'sessions#destroy', as: 'logout'
+  # get 'user_path(:id)' => '/users'
 
-  resources :user
+  # get 'signup' => 'users#new', as: 'signup'
+  # get 'login' => 'devise/sessions#new', as: 'login'
+  get 'logout' => 'devise/sessions#destroy'
+
+  resources :users
   resources :events
   
 end

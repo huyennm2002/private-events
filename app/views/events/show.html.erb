@@ -28,7 +28,14 @@
                 </div>
             <% end %>
         </div>
-
+        <div class="col col-md-3">
+            <h4>Event Attendees</h4>
+            <% @event.attendees.each do |p|%>
+                <div class="row" id="creator-row"> 
+					<p> Name: <%=p.name%></p> 
+				</div> 
+            <%end%> 
+        </div>
     </div>
     
 </div>

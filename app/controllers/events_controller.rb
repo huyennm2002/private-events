@@ -1,6 +1,11 @@
 class EventsController < ApplicationController
+
+  before_action :logged_in_user, only: [:create, :destroy]
+  
   def index
-    @events = Event.all
+    @events = Event.all 
+    @past_events = Event.where("date < ?", Date.today)
+    @upcoming_events =  Event.where("date > ?", Date.today)
   end
 
 
@@ -29,6 +34,12 @@ class EventsController < ApplicationController
     end
     redirect_to '/events/new'
   end
+
+  def destroy
+    Event.find(params[:id]).destroy
+    flash[:success] = "Event deleted"
+    redirect_to events_url
+	end
 
   private
     def event_params

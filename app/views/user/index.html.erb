@@ -1,2 +1,60 @@
 <h1>User#index</h1>
 <p>Find me in app/views/user/index.html.erb</p>
+
+<div class="container user-info">
+	<div class="row">
+		<div class="col">
+			<h2>User Profile: <%= @current_user.id %>.</h2>
+		</div>	
+	</div>	
+</div>
+
+<div class="container">
+    <div class="card card-body">
+		<% if @event != nil%>
+			<h2>Created Events</h2>
+			<% @events.each do |event| %>
+				<div class="row" id="event-row">
+					<p class="event-title"><%= link_to event.name, event %></p> 
+					<p>Date: <%= event.date.strftime("%d/%m/%y") %></p>
+					<p>Location: <%= event.location %></p>
+					<div>Description: <%= event.description %></div>
+				</div>
+			<% end %>
+		<%else%>
+			<P> NO EVENTS</p>
+		<% end %>
+	</div>
+
+	<div class="card card-body">
+		<% if @event != nil%>
+			<h2>Created Events</h2>
+			<% @events.each do |event| %>
+				<div class="row" id="event-row">
+					<p class="event-title"><%= link_to event.name, event %></p> 
+					<p>Date: <%= event.date.strftime("%d/%m/%y") %></p>
+					<p>Location: <%= event.location %></p>
+					<div>Description: <%= event.description %></div>
+				</div>
+			<% end %>
+		<%else%>
+			<P> NO EVENTS</p>
+		<% end %>
+	</div>	
+
+	<div class="card card-body">
+		<% if @event != nil%>
+			<h2>Created Events</h2>
+			<% @events.each do |event| %>
+				<div class="row" id="event-row">
+					<p class="event-title"><%= link_to event.name, event %></p> 
+					<p>Date: <%= event.date.strftime("%d/%m/%y") %></p>
+					<p>Location: <%= event.location %></p>
+					<div>Description: <%= event.description %></div>
+				</div>
+			<% end %>
+		<%else%>
+			<P> NO EVENTS</p>
+		<% end %>
+	</div>
+</div>
