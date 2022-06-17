@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'user/index'
+  # get 'user/index'
   devise_for :users
   # get 'events/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # get 'login' => 'devise/sessions#new', as: 'login'
   get 'logout' => 'devise/sessions#destroy'
 
-  resources :users
+  resources :user, only: [:index,:show]
   resources :events
   
 end

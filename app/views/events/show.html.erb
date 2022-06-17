@@ -5,21 +5,23 @@
 		</div>
     </div>
     <div class="row">
-        <div class="col col-md-3">
+        <div class="row row-md">
         Location: <%= @event.location %>
-        <%if @event.creator %>
-            <div class="col col-md-3">
+        </div>
+        <div class="row row-md-3">
+            <%if @event.creator %>
                 Created by: <%= link_to @event.creator.name, @event.creator%>
-            </div>
-        <%end%>
-        <div class="col col-md-3">
+            <%end%>
+        </div>
+        
+        <div class="row row-md-3">
         Date and Time: <%= @event.date %>
         </div>
-        <div class="col col-md-3">
+        <div class="row row-md-3">
         Description: <%= @event.description %>
         </div>
 
-        <div class="col col-md-3 check_box input-field">
+        <div class="row row-md-3 check_box input-field">
             <%= form_with(model: @event, url: event_path(@event), method: "patch") do |f| %>
                 <%= f.check_box :attendees %> 
                 <%= f.label "Tick if you will be attending the event." %>
@@ -28,7 +30,7 @@
                 </div>
             <% end %>
         </div>
-        <div class="col col-md-3">
+        <div class="row row-md-3">
             <h4>Event Attendees</h4>
             <% @event.attendees.each do |p|%>
                 <div class="row" id="creator-row"> 

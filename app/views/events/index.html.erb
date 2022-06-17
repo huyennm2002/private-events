@@ -7,5 +7,22 @@
             </div>
         <% end %>
         <div class="button"><%= link_to 'Create New Event', new_event_path%></div>
+        <div class="row">
+        <h3>Past Events</h3>
+        <% @past_events.each do |event| %>
+            <div class="row" id="event-row">
+                <p class="event-title"><%= link_to event.name, event %></p> 
+            </div>
+        <% end %>
+    </div>
+    <div class="row">
+        <h3>Upcoming Events</h3>
+        <% @upcoming_events.each do |event| %>
+            <div class="row" id="event-row">
+                <p class="event-title"><%= link_to event.name, event %></p> 
+            </div>
+        <% end %>
+    </div>
     </ul>
+    
 </div>

@@ -21,6 +21,7 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
     if @event.save
       flash[:success] = "Event was saved!"
+      render 'show'
     else
       render 'new'
     end
@@ -43,7 +44,7 @@ class EventsController < ApplicationController
 
   private
     def event_params
-      params.require(:events).permit(:name,:location,:date,:user_id)
+      params.require(:event).permit(:name,:location,:date, :description)
     end
 
     def attendee_checked?
